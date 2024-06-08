@@ -1,0 +1,51 @@
+System.out.println("Film Önerme Yapay Zeka Uygulamama Hoşgeldiniz.");
+		System.out.println("----------------------------------------------");
+		
+        ArrayList<String> aksiyonFilmleri = new ArrayList<>();
+        aksiyonFilmleri.add("Matrix");
+        aksiyonFilmleri.add("Hızlı Ve Öfkeli");
+        aksiyonFilmleri.add("6 Underground");
+
+        ArrayList<String> komediFilmleri = new ArrayList<>();
+        komediFilmleri.add("Recep İvedik");
+        komediFilmleri.add("Düğün Dernek");
+        komediFilmleri.add("Kolpaçino");
+
+        ArrayList<String> bilimKurguFilmleri = new ArrayList<>();
+        bilimKurguFilmleri.add("Meg Derinlerdeki Dehşet");
+        bilimKurguFilmleri.add("The Adam Project");
+        bilimKurguFilmleri.add("Gora");
+
+        
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Hangi türde bir film izlemek istersiniz?");
+        System.out.println("----------------------------------------------");
+        System.out.println("1. Aksiyon");
+        System.out.println("2. Komedi");
+        System.out.println("3. Bilim Kurgu");
+        int secim = scanner.nextInt();
+
+
+        
+        String oneri = "";
+        Random random = new Random();
+        switch (secim) {
+            case 1:
+                oneri = aksiyonFilmleri.get(random.nextInt(aksiyonFilmleri.size()));
+                break;
+            case 2:
+                oneri = komediFilmleri.get(random.nextInt(komediFilmleri.size()));
+                break;
+            case 3:
+                oneri = bilimKurguFilmleri.get(random.nextInt(bilimKurguFilmleri.size()));
+                break;
+            default:
+                System.out.println("Geçersiz seçim!");
+                return;
+        }
+
+        
+        System.out.println("Size önerim: " + oneri);
+
+        scanner.close();
+		
