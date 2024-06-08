@@ -1,0 +1,69 @@
+package first;
+
+import java.util.ArrayList;
+import java.util.Random;
+import java.util.Scanner;
+
+public class YapayZeka3 {
+
+	public static void main(String[] args) {
+		
+		
+		   Scanner scanner = new Scanner(System.in);
+	        ArrayList<String> kelimeler = new ArrayList<>();
+
+
+
+	        kelimeler.add("Batuhan");
+	        kelimeler.add("Ahmet");
+	        kelimeler.add("Oğuz");
+	        kelimeler.add("Hüseyin");
+	        kelimeler.add("Şevval");
+	        kelimeler.add("Gamze");
+	        kelimeler.add("İbrahim");
+	        kelimeler.add("Sevda");
+	        kelimeler.add("Ayşe");
+	        kelimeler.add("Fatma");
+	        kelimeler.add("Nisa");
+	        kelimeler.add("Nida");
+	        kelimeler.add("Mert");
+	        kelimeler.add("Furkan");
+	        kelimeler.add("Utku");
+	        kelimeler.add("Zeki");
+	        
+
+	        System.out.println("Kelime tahmin oyununa hoş geldiniz!");
+	        System.out.println("Bilgisayar bir kelime seçti, şimdi siz tahmin edin.");
+
+	       
+	        Random random = new Random();
+	        String secilenKelime = kelimeler.get(random.nextInt(kelimeler.size()));
+
+	        
+	        while (true) {
+	            System.out.println("Tahmininiz nedir?");
+	            String tahmin = scanner.nextLine().toLowerCase();
+
+	            if (tahmin.equals(secilenKelime)) {
+	                System.out.println("Tebrikler! Doğru tahmin ettiniz.");
+	                break;
+	            } else {
+	                System.out.println("Maalesef yanlış tahmin ettiniz. Tekrar deneyin.");
+	            }
+	        }
+
+	        scanner.close();
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+	}
+
+}
