@@ -1,0 +1,69 @@
+import java.awt.Desktop;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.Scanner;
+
+public class main {
+
+	public static void main(String[] args) throws IOException, URISyntaxException {
+		
+		
+		
+Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Sesli Asistana Hoş Geldiniz!");
+        System.out.println("Komut vermek için bir şeyler söyleyin:");
+
+        while (true) {
+            String komut = scanner.nextLine();
+
+            if (komut.toLowerCase().contains("google")) {
+                System.out.println("Google açılıyor...");
+                acTarayici("https://www.google.com");
+            }
+            
+            
+            
+            else if (komut.toLowerCase().contains("instagram")) {
+                System.out.println("Instagram açılıyor...");
+                acTarayici("https://www.instagram.com");
+            }
+            
+            
+            
+            else if (komut.toLowerCase().contains("youtube")) {
+				System.out.println("Youtube Açılıyor ...");
+				acTarayici("https://www.youtube.com/");
+			}
+            
+            
+            
+            else if (komut.toLowerCase().equals("çık")) {
+                System.out.println("Sesli asistan kapatılıyor...");
+                break;
+            }
+            
+            else {
+                System.out.println("Anlaşılamayan komut. Lütfen tekrar deneyin.");
+            }
+        }
+        
+    
+		
+		
+		
+		
+		
+		
+
+	}
+	
+	 public static void acTarayici(String url) {
+	        try {
+	            Desktop.getDesktop().browse(new URI(url));
+	        } catch (Exception e) {
+	            System.out.println("Tarayıcı açılamadı: " + e.getMessage());
+	        }
+	 }
+}
